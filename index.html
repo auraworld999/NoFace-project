@@ -2,105 +2,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NoFace Token</title>
+  <meta charset="UTF-8">
+  <title>NoFace — AuraWorld999</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      font-family: 'Courier New', monospace;
+      background: url('https://images.unsplash.com/photo-1549887534-4e5f0c1e5175') no-repeat center center fixed;
       background-size: cover;
-      color: white;
-      overflow-x: hidden;
+      color: #fff;
     }
+
     .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 3rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
       min-height: 100vh;
     }
+
     h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
-      animation: fadeIn 2s ease;
+      color: #f00;
+      text-shadow: 0 0 15px #ff0000;
     }
+
     p, li {
       font-size: 1.1rem;
-      margin-bottom: 1rem;
+      line-height: 1.6;
     }
+
     .button {
-      background-color: black;
+      background: #000;
       color: white;
-      padding: 1rem 2rem;
       border: none;
-      cursor: pointer;
+      padding: 1rem 2rem;
+      margin: 1rem 0;
       font-size: 1.2rem;
+      cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: background-color 0.3s ease;
     }
+
     .button:hover {
-      background-color: red;
+      background: red;
     }
+
     .button::after {
-      content: "";
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 10.01%);
-      background-size: 10px 10px;
+      top: -10px;
+      left: -10px;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(255,0,0,0.3) 0%, transparent 80%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
       pointer-events: none;
-      opacity: 0.1;
     }
+
+    .button:hover::after {
+      opacity: 1;
+    }
+
     .section {
-      margin-bottom: 2rem;
+      margin: 2rem 0;
     }
-    ul {
-      padding-left: 1.2rem;
+
+    .whisper {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.3);
+      animation: whisper 5s infinite;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    audio {
-      display: none;
+
+    @keyframes whisper {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.6; }
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <h1>NoFace Token</h1>
+    <h1>NOFACE TOKEN</h1>
+
     <div class="section">
-      <p><strong>Манифест:</strong> Этот токен — не просто цифры. Это идея. Это свобода. Это тьма без лица, но с миллионом голосов.</p>
-      <p>Цена старта: <strong>$0.00001</strong></p>
-      <p>Цель: <strong>$100 000 000</strong> капитализации</p>
+      <p><strong>Цена:</strong> $0.00001</p>
+      <p><strong>Максимальная капитализация:</strong> $100,000,000</p>
     </div>
 
     <div class="section">
-      <h2>💎 Бонусы</h2>
+      <h2>🚨 МАНИФЕСТ</h2>
+      <p>
+        Мы — NoFace. У нас нет лица, но есть голос, идеи и миссия.  
+        Мы не ищем одобрения — мы создаём волну.  
+        NoFace Token — это не просто цифра. Это движение, стиль, энергия, протест.  
+        Кто ты без имени? Кто ты без маски? Кто ты в этом цифровом мире?  
+        Если ты чувствуешь, что не как все — ты уже с нами.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🎁 БОНУСЫ:</h2>
       <ul>
-        <li>$150 000 — Стикеры для Telegram</li>
-        <li>$300 000 — Розыгрыш NFT</li>
-        <li>$500 000 — Мерч NoFace</li>
-        <li>$1 000 000 — Бонусы холдерам</li>
-        <li>$5 000 000 — Легендарный релиз и IRL ивент</li>
+        <li>💸 150K$ — доступ к закрытым мемам NoFace</li>
+        <li>📢 300K$ — shout-out в Telegram и Discord</li>
+        <li>🏆 500K$ — участие в турнире мемов (победитель получает NoFace, не Aura)</li>
+        <li>👥 1M$ — встреча сообщества NoFace в реале</li>
+        <li>🚀 5M$ — дроп NFT от NoFace для первых 999 холдеров</li>
       </ul>
     </div>
 
     <div class="section">
-      <a href="https://t.me/deadnetimpery" class="button">Наш Telegram</a>
+      <button class="button" onclick="window.location.href='https://t.me/deadnetimpery'">🔴 Перейти в Telegram</button><br>
+      <button class="button" onclick="alert('Токен пока не запущен. Следи за Telegram!')">🛒 Купить токен</button>
     </div>
 
-    <div class="section">
-      <button class="button" onclick="alert('Токен пока не запущен. Следи за Telegram.')">Купить токен</button>
-    </div>
-
-    <audio autoplay loop>
-      <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_284219fe89.mp3?filename=whispers-dark-ambient-124291.mp3" type="audio/mpeg">
-    </audio>
+    <div class="whisper">...no one sees the face, only the fire inside...</div>
   </div>
+
+  <!-- Шепот при заходе -->
+  <audio autoplay>
+    <source src="https://cdn.pixabay.com/audio/2023/03/15/audio_b1a2e4f32f.mp3" type="audio/mp3">
+  </audio>
 </body>
+</html>
 
 
