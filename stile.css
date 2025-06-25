@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoFace Masks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Black', sans-serif;
+      background: url('https://images.unsplash.com/photo-1600369671321-98b3e11f3d72?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 30px;
+    }
+
+    .mask {
+      width: 160px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .mask:hover {
+      transform: scale(1.1) rotate(0.3deg);
+      box-shadow: 0 0 30px rgba(255, 0, 100, 0.8);
+    }
+
+    .mask img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .mask-name {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 8px #000;
+    }
+
+    .btn {
+      margin: 20px auto;
+      display: block;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      background: crimson;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px crimson;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px crimson;
+      background: #ff0055;
+    }
+
+    /* Whisper animation on hover */
+    .active-mask {
+      animation: breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1.08); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center; margin-top:40px;">NoFace Mask Gallery</h1>
+  
+  <button class="btn" onclick="window.open('https://t.me/your_telegram_link_here', '_blank')">Join Telegram</button>
+
+  <div class="container" id="maskContainer">
+    <!-- Masks will be added here -->
+  </div>
+
+  <!-- Whisper audio -->
+  <audio id="whisper" src="https://cdn.pixabay.com/audio/2022/03/09/audio_9b1ed8b6e3.mp3" preload="auto"></audio>
+
+  <script>
+    const masks = [
+      { name: "Shadow Mask", image: "https://i.imgur.com/7Ndpl6Z.png" },
+      { name: "Fandom Mask", image: "https://i.imgur.com/ZKM1R5I.png" },
+      { name: "Echo Mask", image: "https://i.imgur.com/nSlG6Tz.png" },
+      { name: "Embo Mask", image: "https://i.imgur.com/XjRDRzh.png" },
+      { name: "Whisper Mask", image: "https://i.imgur.com/7zMdCcw.png" }
+    ];
+
+    const container = document.getElementById('maskContainer');
+    const whisper = document.getElementById('whisper');
+
+    masks.forEach((mask) => {
+      const div = document.createElement('div');
+      div.classList.add('mask');
+      div.innerHTML = `
+        <img src="${mask.image}" alt="${mask.name}">
+        <div class="mask-name">${mask.name}</div>
+      `;
+      div.addEventListener('mouseenter', () => {
+        whisper.currentTime = 0;
+        whisper.play();
+        div.classList.add('active-mask');
+      });
+      div.addEventListener('mouseleave', () => {
+        whisper.pause();
+        div.classList.remove('active-mask');
+      });
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
