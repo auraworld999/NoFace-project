@@ -1,131 +1,75 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NoFace — AuraWorld999</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Courier New', monospace;
-      background: url('https://images.unsplash.com/photo-1549887534-4e5f0c1e5175') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #f00;
-      text-shadow: 0 0 15px #ff0000;
-    }
-
-    p, li {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .button {
-      background: #000;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      margin: 1rem 0;
-      font-size: 1.2rem;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .button:hover {
-      background: red;
-    }
-
-    .button::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle, rgba(255,0,0,0.3) 0%, transparent 80%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .button:hover::after {
-      opacity: 1;
-    }
-
-    .section {
-      margin: 2rem 0;
-    }
-
-    .whisper {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.3);
-      animation: whisper 5s infinite;
-    }
-
-    @keyframes whisper {
-      0%, 100% { opacity: 0.1; }
-      50% { opacity: 0.6; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoFace Token</title>
+  <link rel="stylesheet" href="steel.css" />
 </head>
 <body>
-  <div class="overlay">
-    <h1>NOFACE TOKEN</h1>
-
-    <div class="section">
-      <p><strong>Цена:</strong> $0.00001</p>
-      <p><strong>Максимальная капитализация:</strong> $100,000,000</p>
+  <!-- Header -->
+  <header class="hero">
+    <h1>NoFace</h1>
+    <p>They Whisper. You Rise.</p>
+    <div class="buttons">
+      <a href="https://t.me/nofacetoken" class="btn telegram">Join Telegram</a>
+      <a href="#" class="btn buy">Buy Token</a>
     </div>
+  </header>
 
-    <div class="section">
-      <h2>🚨 МАНИФЕСТ</h2>
-      <p>
-        Мы — NoFace. У нас нет лица, но есть голос, идеи и миссия.  
-        Мы не ищем одобрения — мы создаём волну.  
-        NoFace Token — это не просто цифра. Это движение, стиль, энергия, протест.  
-        Кто ты без имени? Кто ты без маски? Кто ты в этом цифровом мире?  
-        Если ты чувствуешь, что не как все — ты уже с нами.
-      </p>
+  <!-- Manifest -->
+  <section class="manifest">
+    <h2>Manifest</h2>
+    <p>
+      In a world full of noise, NoFace chooses silence. The mask speaks louder than words.
+    </p>
+  </section>
+
+  <!-- Capitalization -->
+  <section class="capitalization">
+    <h2>Capitalization Milestones</h2>
+    <ul>
+      <li>$150K — Aura Spark</li>
+      <li>$300K — Hidden Mask Drop</li>
+      <li>$500K — Whisper Contest</li>
+      <li>$1M — Echo Tournament</li>
+      <li>$5M — Community Ritual</li>
+      <li>$10M — Real Mask Airdrop (10,000 random holders)</li>
+    </ul>
+  </section>
+
+  <!-- Masks -->
+  <section class="masks">
+    <h2>Master Masks</h2>
+    <div class="mask-gallery">
+      <img src="images/shadow.png" alt="Shadow Mask">
+      <img src="images/fandom.png" alt="Fandom Mask">
+      <img src="images/echo.png" alt="Echo Mask">
+      <img src="images/embo.png" alt="Embo Mask">
+      <img src="images/whisper.png" alt="Whisper Mask">
     </div>
+  </section>
 
-    <div class="section">
-      <h2>🎁 БОНУСЫ:</h2>
-      <ul>
-        <li>💸 150K$ — доступ к закрытым мемам NoFace</li>
-        <li>📢 300K$ — shout-out в Telegram и Discord</li>
-        <li>🏆 500K$ — участие в турнире мемов (победитель получает NoFace, не Aura)</li>
-        <li>👥 1M$ — встреча сообщества NoFace в реале</li>
-        <li>🚀 5M$ — дроп NFT от NoFace для первых 999 холдеров</li>
-      </ul>
-    </div>
+  <!-- Eras -->
+  <section class="eras">
+    <h2>The Eras</h2>
+    <ul>
+      <li>Era of Silence</li>
+      <li>Era of Shadows</li>
+      <li>Era of Echoes</li>
+      <li>Era of Unmasking</li>
+      <li>Era of Ritual</li>
+    </ul>
+  </section>
 
-    <div class="section">
-      <button class="button" onclick="window.location.href='https://t.me/deadnetimpery'">🔴 Перейти в Telegram</button><br>
-      <button class="button" onclick="alert('Токен пока не запущен. Следи за Telegram!')">🛒 Купить токен</button>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>NoFace © All rights unspoken.</p>
+  </footer>
 
-    <div class="whisper">...no one sees the face, only the fire inside...</div>
-  </div>
-
-  <!-- Шепот при заходе -->
-  <audio autoplay>
-    <source src="https://cdn.pixabay.com/audio/2023/03/15/audio_b1a2e4f32f.mp3" type="audio/mp3">
-  </audio>
+  <script src="script.js"></script>
 </body>
 </html>
 
